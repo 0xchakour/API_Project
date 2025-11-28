@@ -1,0 +1,185 @@
+.user-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-list-container h2 {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.loading {
+  color: #2196F3;
+}
+
+.error {
+  color: #f44336;
+}
+
+/* Grille des utilisateurs */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Carte utilisateur */
+.user-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation hover sur la carte */
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.user-card:hover::before {
+  left: 100%;
+}
+
+.user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.user-card:active {
+  transform: translateY(-4px);
+}
+
+/* Image utilisateur */
+.user-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.user-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.user-card:hover .user-image {
+  border-color: #4CAF50;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Informations utilisateur */
+.user-info {
+  text-align: center;
+}
+
+.user-name {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-email {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.user-username {
+  margin: 5px 0;
+  color: #999;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Badge de rôle */
+.user-role {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.user-role.role-admin {
+  background-color: #f44336;
+  color: white;
+}
+
+.user-role.role-développeur {
+  background-color: #2196F3;
+  color: white;
+}
+
+.user-role.role-designer {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.user-role.role-manager {
+  background-color: #ff9800;
+  color: white;
+}
+
+.user-role.role-testeur {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Animation d'apparition */
+.user-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Délai d'animation pour chaque carte */
+.user-card:nth-child(1) { animation-delay: 0.1s; }
+.user-card:nth-child(2) { animation-delay: 0.2s; }
+.user-card:nth-child(3) { animation-delay: 0.3s; }
+.user-card:nth-child(4) { animation-delay: 0.4s; }
+.user-card:nth-child(5) { animation-delay: 0.5s; }
+.user-card:nth-child(6) { animation-delay: 0.6s; }
+.user-card:nth-child(7) { animation-delay: 0.7s; }
+.user-card:nth-child(8) { animation-delay: 0.8s; }
+.user-card:nth-child(9) { animation-delay: 0.9s; }
+.user-card:nth-child(10) { animation-delay: 1s; }
+
